@@ -1,0 +1,36 @@
+<style type="text/css">
+*{margin:0; padding:0}
+ul,li{list-style:none}
+#tab{padding:10px; border:1px solid #FC9; margin:50px auto; width:550px}
+#tab span{display:inline-block; padding:5px}
+.c1{background:#FC9}
+.c2{background:#CF3}
+.c3{background:#99F}
+</style>
+<div id="tab">
+	<!--<ul>
+    	<li class="c1"><span>1*1=1</span></li>
+        <li class="c2"><span>1*1=1</span><span>1*1=1</span></li>
+        <li class="c3"><span>1*1=1</span><span>1*1=1</span><span>1*1=1</span></li>
+    </ul>-->
+</div>
+<script type="text/javascript">
+    var oTab=document.getElementById("tab");
+    var str = "";
+    str += "<ul>";
+    for (var i = 1; i <= 9; i++) {
+        str += "<li>";
+        for (var j = 1; j <= i; j++) {
+            str += "<span>" + j + " * " + i + " = " + (j * i) + "</span>";
+        }
+        str += "</li>";
+    }
+    str += "</ul>";
+    var oTab = document.getElementById("tab");
+    oTab.innerHTML = str;
+
+    var oSpans = oTab.getElementsByTagName("span");
+    for (var i = 0; i < oSpans.length; i++) {
+        oSpans[i].className = "c" + (i % 3);
+    }
+</script>
